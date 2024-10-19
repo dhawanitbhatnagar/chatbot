@@ -116,9 +116,13 @@ const handleUpload = async (req, res) => {
                     response: geminiAnswer,
                     sessionId: sessionId,
                     imagePath: file && file.mimetype.startsWith('image/') ? filePath : null,
-                    videoPath: file && file.mimetype.startsWith('video/') ? filePath : null,
                     hasImage: file && file.mimetype.startsWith('image/') ? 1 : 0,
-                    hasVideo: file && file.mimetype.startsWith('video/') ? 1 : 0
+                    videoPath: file && file.mimetype.startsWith('video/') ? filePath : null,
+                    hasVideo: file && file.mimetype.startsWith('video/') ? 1 : 0,
+                    docPath: file && file.mimetype.startsWith('application/') ? filePath : null,
+                    hasDoc: file && file.mimetype.startsWith('application/') ? 1 : 0,
+                    audioPath: file && file.mimetype.startsWith('audio/') ? filePath : null,
+                    hasAudio: file && file.mimetype.startsWith('audio/') ? 1 : 0
                 });
                 const savedEntry = await newEntry.save();
 

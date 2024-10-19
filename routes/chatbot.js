@@ -5,6 +5,7 @@ const axios = require('axios');
 const multer = require('multer');
 const path = require('path');
 const { handleQuery, handleUpload, getQueriesBySessionId } = require('../controllers/chatbotController');
+const { getUnanswerQuestions, unanswerQuestionsUpdate } = require('../controllers/dashboardController');
 
 // Define storage for uploaded files
 const storage = multer.diskStorage({
@@ -23,9 +24,11 @@ const upload = multer({ storage: storage });
 router.post('/query', handleQuery);
 
 // Route to handle image upload
-router.post('/upload', upload.single('image'), handleUpload);
+router.post('/upload', upload.single('file'), handleUpload);
 
 // Route to fetch queries made by user in a single session
 router.get('/queries/:sessionId', getQueriesBySessionId);
+router.get('/unanswer-questions', getUnanswerQuestions);
+router.post('/unanswer-questions/update', unanswerQuestionsUpdate);
 
 module.exports = router;

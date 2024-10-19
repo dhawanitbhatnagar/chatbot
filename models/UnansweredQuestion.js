@@ -9,6 +9,10 @@ const UnansweredQuestionSchema = new mongoose.Schema({
     hasImage: { type: String, default: 0 }, // Field for storing the image flag
     videoPath: { type: String, default: null }, // Field for storing the image path
     hasVideo: { type: String, default: 0 }, // Field for storing the image path
+    docPath: { type: String, default: null }, // Field for storing the image path
+    hasDoc: { type: String, default: 0 }, // Field for storing the image path
+    audioPath: { type: String, default: null }, // Field for storing the image path
+    hasAudio: { type: String, default: 0 }, // Field for storing the image path
     knowledgeBaseRef: { type: mongoose.Schema.Types.ObjectId, ref: 'KnowledgeBase' } // Reference to KnowledgeBase
 });
 
