@@ -5,6 +5,9 @@ const KnowledgeBaseSchema = new mongoose.Schema({
     query: { type: String, required: true },
     response: { type: String, required: true },
     imagePath: { type: String, default: null }, // Field for storing the image path
+    hasImage: { type: String, default: 0 }, // Field for storing the image flag
+    videoPath: { type: String, default: null }, // Field for storing the image path
+    hasVideo: { type: String, default: 0 }, // Field for storing the image path
     sessionId: { type: String, required: true } // Required session ID field
 });
 

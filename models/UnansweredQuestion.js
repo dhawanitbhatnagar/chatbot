@@ -6,7 +6,9 @@ const UnansweredQuestionSchema = new mongoose.Schema({
     createdAt: { type: Date, default: Date.now },
     sessionId: { type: String, required: true }, // Store session ID
     imagePath: { type: String, default: null }, // Field for storing the image path
-    hasImage: { type: Number, default: 0 }, // Flag for whether there is an image
+    hasImage: { type: String, default: 0 }, // Field for storing the image flag
+    videoPath: { type: String, default: null }, // Field for storing the image path
+    hasVideo: { type: String, default: 0 }, // Field for storing the image path
     knowledgeBaseRef: { type: mongoose.Schema.Types.ObjectId, ref: 'KnowledgeBase' } // Reference to KnowledgeBase
 });
 
